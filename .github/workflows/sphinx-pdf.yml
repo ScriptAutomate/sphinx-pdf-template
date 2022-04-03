@@ -34,4 +34,4 @@ jobs:
           
       - name: Test PDF
         run: |
-          pdfinfo ./docs/_build/latex/sphinx-pdf-example.pdf
+          pdfinfo ./docs/_build/latex/sphinxpdftemplate.pdf
