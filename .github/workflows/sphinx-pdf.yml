@@ -31,7 +31,11 @@ jobs:
       - name: Build PDF
         run: |
           make -C docs/ latexpdf
+          ls -lah docs/_build/latex/*.pdf
           
-      - name: Test PDF
-        run: |
-          pdfinfo ./docs/_build/latex/sphinxpdftemplate.pdf
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: sphinxpdftemplate.pdf
+          path: docs/_build/latex/sphinxpdftemplate.pdf
+          retention-days: 5
